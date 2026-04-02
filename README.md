@@ -2,7 +2,7 @@
 
 Uma plataforma de cursos online moderna, bela e dinâmica construída com HTML, CSS e JavaScript puros. O projeto é focado em experiência do usuário e alta agilidade visual por ser uma Single Page Application (SPA), garantindo transições suaves sem que a página precise recarregar.
 
-## 🚀 Como executar o aplicativo na sua máquina local
+## Como executar o aplicativo na sua máquina local
 
 Para ver o projeto funcionando é algo extremamente simples. Por ser um sistema baseado em componentes estáticos nativos da web, **não é necessário instalar nenhuma linguagem de backend, servidores complexos, nem bibliotecas como Node.js**.
 
@@ -30,13 +30,13 @@ A plataforma possui um sistema inteligente de simulação de banco de dados (`js
 
 Você pode interagir livremente: acessar cursos, verificar aulas e testar o funcionamento simulado de inscrições e assinaturas!
 
-## 🛠️ Stack Tecnológica e Ferramentas
+## Stack Tecnológica e Ferramentas
 
 - **Linguagem Estrutural**: **HTML5** Semântico.
 - **Estética e Design**: **CSS3 Vanilla** moderno, contemplando Glassmorphism, Design System com CSS Variables e layout totalmente Responsivo.
 - **Lógica e Sistema**: **Vanilla JavaScript (ES6+)** gerenciando rotas, manipulação agressiva e dinâmica da DOM e persistência local provisória.
 
-## 🗂️ Estrutura de Diretórios Básica
+## Estrutura de Diretórios Básica
 
 - `index.html`: A base de toda a SPA (Single Page Application).
 - `pagamento.html`: Responsável pelo portal seguro de finalização de compras e checkout de cursos.
