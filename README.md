@@ -1,44 +1,50 @@
 # Plataforma de Cursos Online
 
-Uma plataforma de cursos online moderna, bela e dinâmica construída com HTML, CSS e JavaScript puros. O projeto é focado em experiência do usuário e alta agilidade visual por ser uma Single Page Application (SPA), garantindo transições suaves sem que a página precise recarregar.
+Uma plataforma educacional completa desenvolvida sob o conceito de Single Page Application (SPA). O projeto foi desenhado para oferecer uma experiência de usuário (UX) fluida e de alta performance, utilizando conceitos funcionais do desenvolvimento frontend sem a dependência inicial de bibliotecas ou frameworks externos.
 
-## Como executar o aplicativo na sua máquina local
+## Funcionalidades Principais
 
-Para ver o projeto funcionando é algo extremamente simples. Por ser um sistema baseado em componentes estáticos nativos da web, **não é necessário instalar nenhuma linguagem de backend, servidores complexos, nem bibliotecas como Node.js**.
+O sistema contempla as seguintes soluções e fluxos arquitetônicos:
 
-### Passo a passo:
+- **Arquitetura SPA:** Navegação ininterrupta e transições entre rotas na mesma página web sem a necessidade de recarregamento completo do DOM.
+- **Catálogo Dinâmico de Aprendizagem:** Listagem de cursos gerenciáveis integrados a um banco de dados relacional simulado (estruturado por categorias, trilhas de conhecimento e nível técnico).
+- **Gestão de Sessão e Autenticação (Mock):** Sistema integrado de login e criação de usuários com validação estrutural diretamente no ambiente cliente.
+- **Painel do Aluno ("Meus Cursos"):** Dashboard customizado com métricas de estado de matrículas, monitoramento de progresso e visualização percentual das trilhas do aluno.
+- **Visualizador e Reprodutor de Conteúdo:** Ambiente de aula integrado habilitado para renderizar emissores como *iframes* padronizados (ex: YouTube) ou extensões de mídia nativas (MP4).
+- **Checkout Seguro Simulado:** Fluxo de carrinho e transação de pagamento na interface independente `pagamento.html`, contemplando simulação de dados de cobrança e gateways de cartão de crédito.
+- **Persistência de Dados via Armazenamento Local:** Orquestra a injeção e o resgate de consultas ao banco por meio da API nativa do `localStorage` (via `js/database.js`), mantendo o estado vitalício da matrícula e configurações de curso mesmo após o fim da sessão em memória.
+- **Sistema de Design e Componentes Visuais (UI):** Interfaces construídas do zero provendo alto grau de design system, aplicando conceitos como *Glassmorphism*, sistema rigoroso de variáveis CSS, responsividade nativa completa (Mobile First) e tipografia padronizada.
 
-1. **Baixe ou clone o projeto:**
-   - Faça um clone através do Git:
-     ```bash
-     git clone <URL_DO_SEU_REPOSITORIO>
-     ```
-   - Ou faça o download do repositório em formato **.zip** diretamente pelo GitHub e extraia os arquivos no seu computador.
+## Como Executar o Projeto Localmente
 
-2. **Entre na pasta:**
-   Vá até a pasta gerada, seja no gerenciador de janelas do seu computador ou via terminal. Encontre o arquivo que serve como base central da plataforma.
+A solução foi consolidada com arquitetura Serverless puramente estática em seu lado cliente. Portanto, o ambiente funciona inteiramente via renderização pelo navegador (Client-Side Rendering) sem exigir a instalação paralela de ambientes de execução (Node.js, Runtime Engines) ou gerenciadores de pacotes.
 
-3. **Lançamento / Inicialização:**
-   - Para iniciar o app, basta simplesmente **dar um duplo clique no arquivo `index.html`** no seu gerenciador de arquivos (File Explorer).
-   - Uma aba irá se abrir automaticamente no seu navegador web padrão carregando toda a plataforma. Recomendamos o uso de navegadores modernos como o **Google Chrome, Mozilla Firefox, Microsoft Edge ou Safari**.
+### Procedimentos para Teste
 
-### O que esperar da primeira execução?
-A plataforma possui um sistema inteligente de simulação de banco de dados (`js/database.js`) usando o *Local Storage* do Google Chrome/Navegador. Ao iniciar o `index.html` pela primeira vez, o sistema vai preencher automaticamente alguns dados de teste, como:
-- Exemplos de cursos completos com módulos e aulas.
-- Um usuário de testes.
-- Simuladores de vídeos (com direito até a um divertido "Rick Roll"!).
+1. **Obtenção do Código-Fonte**
+   Realize a clonagem do repositório em sua máquina local utilizando o Git pelo terminal:
+   ```bash
+   git clone https://github.com/FabioMiranda04/plataforma-de-cursos.git
+   ```
+   *Em alternativas estáticas, efetue o download do binário via arquivo compactado clicando no painel desta mesma página de repositório.*
 
-Você pode interagir livremente: acessar cursos, verificar aulas e testar o funcionamento simulado de inscrições e assinaturas!
+2. **Preparação de Ambiente**
+   Direcione o sistema para a raiz do diretório recém-clonado. Não é requerida a instalação de dependências ou *build process*.
 
-## Stack Tecnológica e Ferramentas
+3. **Iniciação de Instância**
+   Inicie o arquivo base principal, **`index.html`**, executando-o a partir de qualquer navegador web atualizado (Recomendado: *Google Chrome, Mozilla Firefox, Microsoft Edge ou equivalentes*). A aplicação será montada localmente no próprio ambiente do browser.
 
-- **Linguagem Estrutural**: **HTML5** Semântico.
-- **Estética e Design**: **CSS3 Vanilla** moderno, contemplando Glassmorphism, Design System com CSS Variables e layout totalmente Responsivo.
-- **Lógica e Sistema**: **Vanilla JavaScript (ES6+)** gerenciando rotas, manipulação agressiva e dinâmica da DOM e persistência local provisória.
+### Inicialização Estrutural de Dados Internos
+Na primeira execução lógica da indexação, o modulo de banco de dados (`js/database.js`) detectará a nulidade nas chaves do `localStorage` e preencherá automaticamente os modelos de dados padrões. Isto injetará contas para testes preestabelecidas, planos virtuais, listagem complexa de módulos de cursos e métricas genéricas na rede, permitindo uso funcional imediato das plataformas de pagamento ou navegação em aulas para fins de simulação corporativa e homologação do software.
 
-## Estrutura de Diretórios Básica
+## Arquitetura de Diretórios e Escopo Modular
 
-- `index.html`: A base de toda a SPA (Single Page Application).
-- `pagamento.html`: Responsável pelo portal seguro de finalização de compras e checkout de cursos.
-- `/js`: Todos os controladores, eventos globais e classe de simulação de BD (`database.js`).
-- `/css`: Folha de estilo de extrema qualidade visual `styles.css`.
+- `/` *(raiz)*: Contempla os arquivos de ponta ou entrada da aplicação, contendo a matriz central unificada (`index.html`) e o canal segmentado de pagamento (`pagamento.html`).
+- `/js`: Armazena toda a lógica de manipulação estrutural da DOM, validações de sessões e o componente provisório de Modelos do BD (`database.js`).
+- `/css`: Estruturas globais de classes em formato cascata, paletas de design do sistema e comportamentos responsivos (`styles.css`).
+
+## Tecnologias Base
+
+- **HTML5:** Implementação estrutural semântica das camadas visuais e isolamento arquitetônico dos nós de DOM.
+- **CSS3 (Vanilla Base):** Sistema robusto com integração avançada de UI/UX abrangendo flexbox, CSS Grids e media queries de alta precisão.
+- **JavaScript (ECMAScript / ES6+):** Programação assíncrona, instanciação de classes orientada a objeto e gerenciamento avançado de estado no painel do usuário final.
