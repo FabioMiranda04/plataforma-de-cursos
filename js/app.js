@@ -500,7 +500,21 @@ const app = {
     playVideo(url, tipo) {
         const container = document.getElementById('videoContainer');
         if(tipo === 'YouTube') {
-            container.innerHTML = '<iframe src="' + url + '" allowfullscreen></iframe>';
+            let embedUrl = url;
+            if (url.includes('watch?v=')) {
+                embedUrl = url.replace('watch?v=', 'embed/');
+                const ampersandPos = embedUrl.indexOf('&');
+                if (ampersandPos !== -1) {
+                    embedUrl = embedUrl.substring(0, ampersandPos);
+                }
+            } else if (url.includes('youtu.be/')) {
+                embedUrl = url.replace('youtu.be/', 'youtube.com/embed/');
+                const questionPos = embedUrl.indexOf('?');
+                if (questionPos !== -1) {
+                    embedUrl = embedUrl.substring(0, questionPos);
+                }
+            }
+            container.innerHTML = '<iframe src="' + embedUrl + '" allowfullscreen></iframe>';
         } else {
             container.innerHTML = '<video src="' + url + '" controls autoplay></video>';
         }
