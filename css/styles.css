@@ -541,7 +541,64 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
+
 .profile-content {
     flex: 7;
     padding-left: 1rem;
 }
+
+/* ==================================================
+   ESTILOS ADICIONAIS: ADMIN DROPDOWN
+   ================================================== */
+
+.nav-tabs-custom .dropdown > .nav-link {
+    padding: 10px 5px;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-tabs-custom .dropdown:hover > .nav-link {
+    color: var(--primary-color);
+}
+
+.nav-tabs-custom .dropdown-menu {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.5rem 0;
+    min-width: 220px;
+}
+
+.nav-tabs-custom .dropdown-item {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    color: var(--text-dark);
+    transition: background 0.15s;
+    cursor: pointer;
+}
+
+.nav-tabs-custom .dropdown-item:hover {
+    background-color: #f0f3ff;
+    color: var(--primary-color);
+}
+
+.nav-tabs-custom .dropdown-header {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    padding: 0.4rem 1.2rem;
+}
+
+.text-purple { color: var(--secondary-color); }
+
+/* Alerta global sticky */
+#alerta {
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
